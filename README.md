@@ -1,10 +1,10 @@
-#redux-form-generator V6 for redux-form v6
+# redux-form-generator V6 for redux-form v6
 Generate bootstrap-form in your react application by providing json.
 
 Version 6 is build from the ground up, so you know features are missing ;) 
 
 
-#Migration 
+# Migration 
 V0.1.x -> V6.x.x
   - Added property hortzontal (bool)
   - Renamed property fieldsNeeded -> fields (json)
@@ -17,44 +17,44 @@ V0.1.x -> V6.x.x
   - Removed property formClass
 
 
-#Warning
+# Warning
 Breaking changes
 
-##0.0x Release for use with react-bootstrap <= 0.28.x
+## 0.0x Release for use with react-bootstrap <= 0.28.x
 
-##0.1.x Release from use with react-bootstrap >=0.29.x
+## 0.1.x Release from use with react-bootstrap >=0.29.x
 
 
 
-##Installation
-````
+## Installation
+```
 npm install --save redux-form-generator
-````
+```
 
 File uploads are using [react-plupload](https://github.com/lemonCMS/react-plupload)
 So if you need file upload please follow the instructions over there for installation
 
-##Example
+## Example
 The is a small example included, this example had no working backend
 Use with the chromebrowser, IE will fail in the example.
 
 [online](http://redux-form-generator.babyblox.nl)
 
 
-````
+```
 git clone https://github.com/lemonCMS/redux-form-generator.git
 cd redux-form-generator/example
 npm install
 npm run dev
-````
+```
 
 
-##Usage
+## Usage
 
 Define a const field function, later on in your component you call this function and you can pass extra params you can use in the fields definition. 
 Like i needed my authorization token for the use with plupload.
 
-````javascript
+```javascript
 export default function form(resource) {
   return ([
     {
@@ -75,11 +75,11 @@ export default function form(resource) {
     }]
   );
 }
-````
+```
 
 Put in your react render component the following code
 
-````jsx
+```jsx
 <DynamicForm
 	name="userEdit" <-- Name of your store 
 	horizontal <-- Display fthe form horizontal  
@@ -89,12 +89,12 @@ Put in your react render component the following code
 	onSubmit={this.handleSubmit} <-- The submit function in your component to handle submit
 	validate={(data) => { return {} }} <--Validation rules
 />
-````
+```
 
-#Available types
+# Available types
 
-##Button
-````js
+## Button
+```js
 {
     type: 'button',
     name: 'button',
@@ -103,19 +103,19 @@ Put in your react render component the following code
       console.log('You clicked me');
     }
 }
-````
+```
 
-##Submit
-````js
+## Submit
+```js
 {
     type: 'submit',
     name: 'submit',
     value: 'Send'
 }
-````
+```
 
-##Text
-````js
+## Text
+```js
 {
     name: 'field_1',
     label: 'Field 1',
@@ -132,10 +132,10 @@ Put in your react render component the following code
         md: 10
     }
 }
-````
+```
 
-##Password
-````js
+## Password
+```js
 {
     name: 'field_1',
     label: 'Field 1',
@@ -151,10 +151,10 @@ Put in your react render component the following code
         md: 10
     }
 }
-````
+```
 
-##Select
-````js
+## Select
+```js
 {
   name: 'field_3',
   label: 'Field 3',
@@ -174,10 +174,10 @@ Put in your react render component the following code
     {value: '4', desc: 'Value 4'}
   ]
 }
-````
+```
 
-##Radio
-````js
+## Radio
+```js
 {
   name: 'field_4',
   label: 'Field 4',
@@ -199,9 +199,9 @@ Put in your react render component the following code
   chunks: 3,
   filter: true
 }
-````
-##Checkbox
-````js
+```
+## Checkbox
+```js
 {
   name: 'field_6',
   label: 'Field 6',
@@ -224,10 +224,10 @@ Put in your react render component the following code
   chunks: 3,
   filter: true
 }
-````
+```
 
-##Textarea
-````js
+## Textarea
+```js
 {
   name: 'field_5',
   label: 'Field 5',
@@ -241,11 +241,11 @@ Put in your react render component the following code
     md: 10
   }
 }
-````
+```
 
-##Rte
+## Rte
 Tinymce editor, so for configuration options [tinymce](http://tinymce.com)
-````js
+```js
 {
   name: 'field_8',
   label: 'Field 8',
@@ -262,10 +262,10 @@ Tinymce editor, so for configuration options [tinymce](http://tinymce.com)
     md: 10
   }
 }
-````
+```
 
-##Input with dropdown
-````js
+## Input with dropdown
+```js
 {
   name: 'field_7',
   label: 'Field 7',
@@ -289,11 +289,11 @@ Tinymce editor, so for configuration options [tinymce](http://tinymce.com)
     md: 10
   }
 }
-````
+```
 
-##Resource
+## Resource
 Load data from overlay with its own store. See the example on how to implement
-````js
+```js
 {
   name: 'field_9',
   label: 'Field 9',
@@ -305,11 +305,11 @@ Load data from overlay with its own store. See the example on how to implement
     {value: 3, desc: 'Item 3'}
   ]
 }
-````
-##Plupload
+```
+## Plupload
 Upload files with plupload
 See for more configuration options [plupload](http://www.plupload.com)
-````js
+```js
 {
   name: 'field_10',
   label: 'Field 10',
@@ -326,11 +326,11 @@ See for more configuration options [plupload](http://www.plupload.com)
     headers: {Authorization: 'Bearer laravelAutToken'}
   }
 }
-````
+```
 
-##DateTime
+## DateTime
 See for more configuration options [plupload](https://github.com/quri/react-bootstrap-datetimepicker)
-````js
+```js
 {
   name: 'field_11',
   label: 'Field 11',
@@ -348,29 +348,29 @@ See for more configuration options [plupload](https://github.com/quri/react-boot
     md: 10
   }
 }
-````
+```
 
-#Success
+# Success
 Show this message when the form has been succesfully send.
-````js
+```js
 {
   type: 'success',
   message: 'The form has been send'
 }
-````
+```
 
-#Error
+# Error
 Show this message when there are errors
-````js
+```js
 {
   type: 'error',
   message: 'There are errors, please check the form.'
 }
-````
+```
 
-##Misc
+## Misc
 Display multiple fields in one row
-````js
+```js
 row: {
   col: [
     {
@@ -407,12 +407,12 @@ row: {
     },
   ]
 }
-````
+```
 
 
 
 Display messaged in your own grid layout.
-````js
+```js
 {
       row: {
         hideOnStatic: true,
@@ -427,21 +427,21 @@ Display messaged in your own grid layout.
         ]
       }
     }
-````
+```
 
-#Dependecies
+# Dependecies
 - [react-bootstrap](https://github.com/react-bootstrap/react-bootstrap)
 - [react-datetime](https://github.com/YouCanBookMe/react-datetime)
 - [react-tinymce](https://github.com/instructure-react/react-tinymce)
 - [react-plupload](https://www.npmjs.com/package/react-plupload)
 
-#Help wanted
+# Help wanted
 Help wanted to make this package stable!
 
 
-###PM2
+### PM2
 Go into the example directory.
 and run
-````
+```
 pm2 start "/usr/bin/npm" -f --name "app-redux-form-generator" -- run start
-````
+```
